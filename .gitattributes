@@ -1,0 +1,17 @@
+*.png binary
+*.jpg binary
+*.ico binary
+*.jpeg binary
+*.pdf binary
+*.ttf binary
+*.woff binary
+*.woff2 binary
+*.ods binary
+
+* filter=git-crypt diff=git-crypt
+
+
+# Ausnahmen: Dateien, die nicht verschlüsselt werden sollen
+/.gitattributes !filter !diff
+/.gitignore !filter !diff
+/README.md !filter !diff
