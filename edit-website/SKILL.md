@@ -63,6 +63,7 @@ zeige eine Fehlermeldung an und beende den Skill.
 
 ## Globale Regeln
 
+- Lies den Context aus `./.shiller-context.txt` ein. Dort sind die globalen Regeln und Kundendaten hinterlegt. Du darfst darin daten ändertn, wenn diese explizit geändert werden sollen.
 - Änderungen außerhalb von `./docs/` sind verboten.
 - Ändere keine CSS-, JS-, Bild-, PDF-, Backend- oder Mediastore-Dateien.
 - Wenn gesagt wird, dass Du Bilder oder Datein ändern sollst: Es sollten dir im Prompt die neuen Dateien angeben sein. Ordne diese
