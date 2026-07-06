@@ -3,7 +3,7 @@
 ## Install
 
 ```bash
-git submodule add -b main git@github.com:l2fn/leu-ai-skills.git .pi/skills
+git submodule add -b main git@github.com:l2fn/leu-ai-skills.git .pi/skills/leu-ai-skills
 
 ## Laden / aktualisieren
 git submodule update --init --recursive
