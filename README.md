@@ -1,5 +1,12 @@
 # Skills für Leuffen Webdienste
 
+## Enthaltene Skills
+
+- `edit-website`
+- `edit-website-by-email`
+- `jekyll-page`
+- `upgrade-website`
+
 ## Install
 
 ```bash
