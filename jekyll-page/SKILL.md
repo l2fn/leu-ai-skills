@@ -67,3 +67,11 @@ subfooter -> Flache Navigation für z.B. Impressum, Datenschutz, AGB, etc. (kein
 
 Standardmässig wird `title` in der navigation angezeigt. Falls `nav_title` angegeben ist, wird dieser name in der Navigation angezeigt. 
 
+## Metadaten
+
+```
+title: <Titel der Seite> (wird in der Navigation und im Browser-Tab angezeigt)
+nav_title: <Titel der Seite in der Navigation> (optional, falls abweichend von title)
+description: <Beschreibung der Seite> (optional, wird in der Meta-Description im HTML-Header verwendet)
+permalink: <URL-Pfad der Seite> (optional, falls abweichend vom Dateipfad) - beibehalten, wenn gesetzt - ansonsten nur bei aufforderung setzen
+```
