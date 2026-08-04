@@ -75,3 +75,27 @@ nav_title: <Titel der Seite in der Navigation> (optional, falls abweichend von t
 description: <Beschreibung der Seite> (optional, wird in der Meta-Description im HTML-Header verwendet)
 permalink: <URL-Pfad der Seite> (optional, falls abweichend vom Dateipfad) - beibehalten, wenn gesetzt - ansonsten nur bei aufforderung setzen
 ```
+
+## Navigationsstruktur
+
+```
+./docs/
+    - index.md (Startseite)
+    - leistungen/
+      - index.md (Kategorie-Seite "Leistungen" - Sollte per default `layout: index` haben)
+      - diagnostik.md (Leaf-Seite "Diagnostik" - layout: default)
+    - kontakt.md (Leaf-Seite "Kontakt" - layout: default)
+```
+
+Vergebe beim neue anlegen von Seiten keinen permalink, sondern lass Jekyll den Pfad automatisch generieren. 
+
+Achtung: Wenn du index-Seiten anlegst: immer layout: index verwenden - dieser fügt automatisch links zu allen unterseiten ein. (außer bei der Startseite `./docs/index.md` - Dies ist die Hauptseite)
+
+## Obsolete Frontmatter-Variablen
+
+```
+pid: 
+lang:
+short_title: -> ersetzen durch nav_title nur wenn abweichend von title
+```
+

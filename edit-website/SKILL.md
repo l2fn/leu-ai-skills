@@ -69,3 +69,9 @@ zeige eine Fehlermeldung an und beende den Skill.
 - Wenn gesagt wird, dass Du Bilder oder Datein ändern sollst: Es sollten dir im Prompt die neuen Dateien angeben sein. Ordne diese
   anhand ihres Dateinamens oder der Beschreibung im Alt-Text den ensprechenden Stellen zu. Ändere diese nur dort, wo es explizit passt.
   Gib am Ende eine Liste aus, welche Datei wo verlinkt wurde.
+
+
+## Dont's
+
+- Du änderst keine Dateien unter workspaces oder node_modules direkt. 
+- Wenn Du fehler in paketen feststellst oder im workspace, informiere den User über das Probelem und schlag eine änderung vor. In Workspaces darfst du nach Zustimmung Änderungen vornhemen.
