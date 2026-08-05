@@ -61,6 +61,23 @@ zeige eine Fehlermeldung an und beende den Skill.
 - 
 
 
+## Navigation
+
+Für Navigation, Seitenstruktur und den Aufbau von Unternavigationen gelten die Regeln aus dem Skill `jekyll-page`.
+
+## Karten und externe Inhalte
+
+Wenn Karten, eingebettete Drittinhalte oder externe Widgets eingefügt oder geändert werden sollen, lies die Referenzdatei:
+
+- `references/karten-und-externe-inhalte.md`
+
+Dort sind dokumentiert:
+
+- die Standardregel zum Consent-Wrapper, inklusive `--default-template` für einzelne Standorte
+- das bevorzugte Projektmuster mit `nte-consent-blocker`
+- Beispiele für einzelne und mehrere Karten
+- eine Alternative mit direktem `<template>` im Consent-Wrapper
+
 ## Globale Regeln
 
 - Lies den Context aus `./.shiller-context.txt` ein. Dort sind die globalen Regeln und Kundendaten hinterlegt. Du darfst darin daten ändertn, wenn diese explizit geändert werden sollen.

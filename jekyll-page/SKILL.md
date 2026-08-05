@@ -29,6 +29,8 @@ Die Markdown-Dateien nutzen die Layouts unter `./docs/_layouts/`.
 
 Startseite unter `./docs/index.md`.
 
+Wichtig: Die Hauptseite liegt immer direkt im Wurzelverzeichnis von `./docs/` und nicht in einem Unterordner wie `./docs/pages/`.
+
 ### Kategorie-Seiten
 
 Kategorie-Seiten liegen in einem Unterverzeichnis unter `./docs/`.
@@ -48,24 +50,71 @@ Diese werden in der Hauptnavigation als normaler Punkt angezeigt. Leaf-Seien von
 
 ### Navigationsleisten
 
-über die Frontmatter-Variable
+Über die Frontmatter-Variable
 
 ```
 ptags:
 - nav
 ```
 
-Kann die Seite in den Navigationsbaum aufgenommen werden. Die Reihenfolge der Navigation wird über die Frontmatter-Variable `order` gesteuert.
+kann die Seite in den Navigationsbaum aufgenommen werden. Die Reihenfolge der Navigation wird über die Frontmatter-Variable `order` gesteuert.
 
-Es können ein oder mehrere ptags angegeben werden. Definierte Ptags sind:
+Es können ein oder mehrere `ptags` angegeben werden. Verwendete `ptags` in diesem Projekt:
 
 ```
-nav -> Hauptnavigation mit unternavigation
-footer -> Footer Navigation mit unterseiten
+nav -> Hauptnavigation mit Unternavigation
+footer -> Footer-Navigation
 subfooter -> Flache Navigation für z.B. Impressum, Datenschutz, AGB, etc. (keine Unterelemente)
 ```
 
-Standardmässig wird `title` in der navigation angezeigt. Falls `nav_title` angegeben ist, wird dieser name in der Navigation angezeigt. 
+Standardmäßig wird `title` in der Navigation angezeigt. Falls `nav_title` angegeben ist, wird dieser Name in der Navigation angezeigt.
+
+### Aufbau von Unternavigationen im `osman`-Stil
+
+Im aktuellen Projekt ist besonders der `osman`-Navbar-Stil relevant. Dort wird die Hauptnavigation hierarchisch aus dem Dateipfad und `ptags: [nav]` aufgebaut.
+
+Wichtige Regel:
+
+- Hat eine Kategorie-Indexseite wie `./docs/leistungen/index.md` den `ptag` `nav`
+- **und** haben direkte Unterseiten wie `./docs/leistungen/sehschule.md` ebenfalls `ptags: [nav]`
+- dann werden diese Unterseiten in der Hauptnavigation als Unterpunkte / Dropdown-Menü angezeigt.
+
+Dabei gilt im `osman`-Stil ausdrücklich:
+
+- Die Kategorie-Seite selbst wird dann in der Navigation **nicht mehr als normal klickbarer Link** ausgegeben.
+- Sie erscheint nur noch als Menüpunkt / Kategorie-Überschrift mit Unterpunkten.
+- Die eigentliche Index-Seite ist dann nur noch indirekt erreichbar, z. B. über interne Links, Buttons, Teaser oder als Kategorie-Übersichtsseite außerhalb der Hauptnavigation.
+
+Genau so sollen Seiten wie **Leistungen**, **Über uns** oder **Themen** verlinkt werden: die Unterseiten bekommen `ptags: [nav]`, damit unter der Kategorie Unterpunkte entstehen.
+
+### Praktische Struktur für Unterpunkte
+
+```text
+./docs/
+  index.md                  # Hauptseite / Startseite
+  leistungen/
+    index.md                # Kategorie-Übersicht
+    sehschule.md            # Unterpunkt
+    strabologie-schielen.md # Unterpunkt
+```
+
+Beispiel:
+
+```yaml
+# ./docs/leistungen/index.md
+ptags:
+  - nav
+order: 1
+```
+
+```yaml
+# ./docs/leistungen/sehschule.md
+ptags:
+  - nav
+order: 1
+```
+
+Wenn eine Kategorie-Seite als Übersichtsseite gedacht ist, sollte sie als `index.md` im Unterordner bleiben. Neue Kategorie-Indexseiten möglichst mit `layout: index` anlegen, damit automatisch eine passende Übersichtsseite mit Links zu den Unterseiten entsteht.
 
 ## Metadaten
 
